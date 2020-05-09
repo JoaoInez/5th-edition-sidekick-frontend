@@ -1,0 +1,9 @@
+.light-theme {
+  --page-bg: white;
+  --font-color: black;
+}
+
+.dark-theme {
+  --page-bg: black;
+  --font-color: white;
+}
