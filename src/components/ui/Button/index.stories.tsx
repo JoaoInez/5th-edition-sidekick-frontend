@@ -4,24 +4,14 @@ import Button from "./index";
 
 export default { title: "Button", decorators: [withA11y] };
 
-export const withText: FC = () => <Button>Hello</Button>;
-
-export const withEmoji: FC = () => (
+export const lightTheme: FC = () => (
   <div className="light-theme">
-    <Button>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
+    <Button>Hello</Button>
   </div>
 );
 
-export const defaultView: FC = () => <Button>Info</Button>;
-
-export const accessible: FC = () => <button>Accessible button</button>;
-
-export const inaccessible: FC = () => (
-  <button style={{ backgroundColor: "red", color: "darkRed" }}>
-    Inaccessible button
-  </button>
+export const darkTheme: FC = () => (
+  <div className="dark-theme">
+    <Button>Hello</Button>
+  </div>
 );
