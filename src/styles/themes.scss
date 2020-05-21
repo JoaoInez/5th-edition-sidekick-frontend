@@ -1,5 +1,6 @@
+@import "styles/mixins.scss";
+
 $white: #fff;
-$transparent-white: rgba(#fff, 0.86);
 $concrete: #f2f2f2;
 $gallery: #eaeaea;
 $mercury: #e6e6e6;
@@ -9,7 +10,6 @@ $mine-shaft: #333;
 $cod-gray: #1a1a1a;
 $dark-gray: #121212;
 $black: #000;
-$transparent-black: rgba(#000, 0.6);
 $alizarin-crimson: #e71d36;
 $amber: #ffbe0b;
 $international-orange: #fb5607;
@@ -18,24 +18,22 @@ $electric-violet: #8338ec;
 $dodger-blue: #3a86ff;
 
 :root {
-  --white: #fff;
-  --transparent-white: rgba(255, 255, 255, 0.86);
-  --concrete: #f2f2f2;
-  --gallery: #eaeaea;
-  --mercury: #e6e6e6;
-  --gray: #888;
-  --doved-gray: #666;
-  --mine-shaft: #333;
-  --cod-gray: #1a1a1a;
-  --dark-gray: #121212;
-  --black: #000;
-  --transparent-black: rgba(0, 0, 0, 0.6);
-  --alizarin-crimson: #e71d36;
-  --amber: #ffbe0b;
-  --international-orange: #fb5607;
-  --rose: #ff006e;
-  --electric-violet: #8338ec;
-  --dodger-blue: #3a86ff;
+  @include rgb-color(--white, $white);
+  @include rgb-color(--concrete, $concrete);
+  @include rgb-color(--gallery, $gallery);
+  @include rgb-color(--mercury, $mercury);
+  @include rgb-color(--gray, $gray);
+  @include rgb-color(--doved-gray, $doved-gray);
+  @include rgb-color(--mine-shaft, $mine-shaft);
+  @include rgb-color(--cod-gray, $cod-gray);
+  @include rgb-color(--dark-gray, $dark-gray);
+  @include rgb-color(--black, $black);
+  @include rgb-color(--alizarin-crimson, $alizarin-crimson);
+  @include rgb-color(--amber, $amber);
+  @include rgb-color(--international-orange, $white);
+  @include rgb-color(--rose, $rose);
+  @include rgb-color(--electric-violet, $electric-violet);
+  @include rgb-color(--dodger-blue, $dodger-blue);
 }
 
 @mixin light-theme {
@@ -51,10 +49,10 @@ $dodger-blue: #3a86ff;
   --on-reverse-surface-color: var(--on-surface-color);
   --on-alt-reverse-surface-color: var(--on-alt-surface-color);
   --primary-color: var(--alizarin-crimson);
-  --on-primary-color: var(--transparent-white);
+  --on-primary-color: #{rgba(get-rgb(--white), 0.9)};
   --secondary-color: var(--doved-gray);
   --accent-color: var(--gallery);
-  --nav-color: var(--transparent-white);
+  --nav-color: #{rgba(get-rgb(--white), 0.8)};
 }
 
 @mixin dark-theme {
@@ -70,10 +68,10 @@ $dodger-blue: #3a86ff;
   --on-reverse-surface-color: var(--on-alt-surface-color);
   --on-alt-reverse-surface-color: var(--on-surface-color);
   --primary-color: var(--alizarin-crimson);
-  --on-primary-color: var(--transparent-white);
+  --on-primary-color: #{rgba(get-rgb(--white), 0.9)};
   --secondary-color: var(--gray);
   --accent-color: var(--mine-shaft);
-  --nav-color: var(--transparent-black);
+  --nav-color: #{rgba(get-rgb(--black), 0.6)};
 }
 
 .light-theme {

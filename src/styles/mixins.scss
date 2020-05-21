@@ -62,17 +62,16 @@
 }
 
 @mixin rgb-color($name, $color: $name) {
-  --#{$name}: #{$color};
-  --#{$name}-rgb: #{hex-to-rgb($color)};
+  #{$name}: #{$color};
+  #{$name}-rgb: #{hex-to-rgb($color)};
 }
 
-@function color($var, $rgb: false) {
-  @if $rgb == false {
-    @return var(#{$var}-color);
-  }
-  @if $rgb == rgb {
-    @return var(#{$var}-color-rgb);
-  }
+@function color($var) {
+  @return var(#{$var}-color);
+}
+
+@function get-rgb($color) {
+  @return var(#{$color}-rgb);
 }
 
 @function hex-to-rgb($hex) {
