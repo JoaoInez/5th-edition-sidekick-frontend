@@ -13,7 +13,7 @@
 
 .article1 {
   @include article();
-  padding: 240px 0 200px;
+  padding: 200px 0;
   border-top: none;
 
   .container {

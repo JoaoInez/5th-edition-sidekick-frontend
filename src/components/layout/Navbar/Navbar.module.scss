@@ -4,9 +4,8 @@
   z-index: 1;
   background-color: color(--nav);
   color: color(--on-surface);
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
   backdrop-filter: blur(6px);
   border-bottom: 1px solid color(--accent);
 
@@ -21,7 +20,7 @@
     .logo {
       font-size: 1.62671rem;
       font-weight: bold;
-      color: var(--alizarin-crimson);
+      color: var(--primary-color);
     }
   }
 }

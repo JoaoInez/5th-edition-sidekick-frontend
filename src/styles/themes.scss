@@ -17,23 +17,9 @@ $rose: #ff006e;
 $electric-violet: #8338ec;
 $dodger-blue: #3a86ff;
 
-:root {
-  @include rgb-color(--white, $white);
-  @include rgb-color(--concrete, $concrete);
-  @include rgb-color(--gallery, $gallery);
-  @include rgb-color(--mercury, $mercury);
-  @include rgb-color(--gray, $gray);
-  @include rgb-color(--doved-gray, $doved-gray);
-  @include rgb-color(--mine-shaft, $mine-shaft);
-  @include rgb-color(--cod-gray, $cod-gray);
-  @include rgb-color(--dark-gray, $dark-gray);
-  @include rgb-color(--black, $black);
-  @include rgb-color(--alizarin-crimson, $alizarin-crimson);
-  @include rgb-color(--amber, $amber);
-  @include rgb-color(--international-orange, $white);
-  @include rgb-color(--rose, $rose);
-  @include rgb-color(--electric-violet, $electric-violet);
-  @include rgb-color(--dodger-blue, $dodger-blue);
+@mixin gen-color($name, $color: $name) {
+  #{$name}: #{$color};
+  #{$name}-rgb: #{hex-to-rgb($color)};
 }
 
 @mixin light-theme {
@@ -52,7 +38,7 @@ $dodger-blue: #3a86ff;
   --on-primary-color: #{rgba(get-rgb(--white), 0.9)};
   --secondary-color: var(--doved-gray);
   --accent-color: var(--gallery);
-  --nav-color: #{rgba(get-rgb(--white), 0.8)};
+  --nav-color: #{rgba(get-rgb(--white), 0.6)};
 }
 
 @mixin dark-theme {
@@ -72,6 +58,29 @@ $dodger-blue: #3a86ff;
   --secondary-color: var(--gray);
   --accent-color: var(--mine-shaft);
   --nav-color: #{rgba(get-rgb(--black), 0.6)};
+}
+
+@function hex-to-rgb($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+  @include gen-color(--white, $white);
+  @include gen-color(--concrete, $concrete);
+  @include gen-color(--gallery, $gallery);
+  @include gen-color(--mercury, $mercury);
+  @include gen-color(--gray, $gray);
+  @include gen-color(--doved-gray, $doved-gray);
+  @include gen-color(--mine-shaft, $mine-shaft);
+  @include gen-color(--cod-gray, $cod-gray);
+  @include gen-color(--dark-gray, $dark-gray);
+  @include gen-color(--black, $black);
+  @include gen-color(--alizarin-crimson, $alizarin-crimson);
+  @include gen-color(--amber, $amber);
+  @include gen-color(--international-orange, $white);
+  @include gen-color(--rose, $rose);
+  @include gen-color(--electric-violet, $electric-violet);
+  @include gen-color(--dodger-blue, $dodger-blue);
 }
 
 .light-theme {
