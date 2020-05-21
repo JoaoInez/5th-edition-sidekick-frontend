@@ -1,0 +1,89 @@
+@mixin container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@mixin card($style: normal) {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 4px;
+  @include box-shadow(short, rgba(#000, 0.04));
+
+  @if $style == normal {
+    background-color: color(--surface);
+    color: color(--on-surface);
+  }
+  @if $style == alt {
+    background-color: color(--alt-surface);
+    color: color(--on-alt-surface);
+  }
+  @if $style == reverse {
+    background-color: color(--reverse-surface);
+    color: color(--on-reverse-surface);
+  }
+  @if $style == alt-reverse {
+    background-color: color(--alt-reverse-surface);
+    color: color(--on-alt-reverse-surface);
+  }
+}
+
+@mixin box-shadow($size: short, $color: rgba(#000, 0.07)) {
+  @if $size == short {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07), 0 2px 2px rgba(0, 0, 0, 0.07),
+      0 4px 4px rgba(0, 0, 0, 0.07), 0 6px 8px rgba(0, 0, 0, 0.07),
+      0 8px 16px rgba(0, 0, 0, 0.07);
+  }
+  @if $size == long {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+      0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+      0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  }
+}
+
+@mixin button-float {
+  transition: background-color 0.18s ease-in-out, color 0.18s ease-in-out,
+    border 0.18s ease-in-out, box-shadow 0.18s ease-in-out,
+    transform 0.125s ease-in-out;
+  @include box-shadow();
+  transform: translateY(0);
+
+  &:hover {
+    @include box-shadow(long);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: none;
+    transform: translateY(0);
+  }
+}
+
+@mixin rgb-color($name, $color: $name) {
+  --#{$name}: #{$color};
+  --#{$name}-rgb: #{hex-to-rgb($color)};
+}
+
+@function color($var, $rgb: false) {
+  @if $rgb == false {
+    @return var(#{$var}-color);
+  }
+  @if $rgb == rgb {
+    @return var(#{$var}-color-rgb);
+  }
+}
+
+@function hex-to-rgb($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+@function random-color() {
+  $colors: alizarin-crimson, amber, international-orange, rose, electric-violet,
+    dodger-blue;
+
+  $randomColor: nth($colors, random(length($colors)));
+
+  @return var(--#{$randomColor});
+}

@@ -18,7 +18,11 @@ module.exports = {
         {
           loader: "css-loader",
           options: {
-            modules: true,
+            modules: {
+              mode: "global",
+              exportGlobals: true,
+              context: path.resolve(__dirname, "src"),
+            },
           },
         },
         "sass-loader",
@@ -26,6 +30,10 @@ module.exports = {
       include: path.resolve(__dirname, "../src/"),
     });
     config.resolve.extensions.push(".ts", ".tsx");
+    config.resolve.modules = [
+      ...(config.resolve.modules || []),
+      path.resolve(__dirname, "../src/"),
+    ];
     return config;
   },
 };

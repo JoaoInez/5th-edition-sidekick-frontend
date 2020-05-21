@@ -1,0 +1,82 @@
+@import "styles/mixins.scss";
+
+@mixin article {
+  display: flex;
+  align-items: flex-start;
+  background-color: color(--background);
+  border-top: 1px solid color(--accent);
+
+  .container {
+    @include container();
+  }
+}
+
+.article1 {
+  @include article();
+  padding: 240px 0 200px;
+  border-top: none;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      flex: 1;
+    }
+
+    .article1Left {
+      h1 {
+        font-size: 4rem;
+      }
+
+      p {
+        font-size: 1.125rem;
+      }
+    }
+
+    .article1Right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .signUpBtn {
+        padding: 10px 50px;
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+.article2,
+.article3 {
+  @include article();
+  padding: 100px 0;
+
+  h1,
+  h4 {
+    text-align: center;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    color: color(--secondary);
+  }
+
+  .wrapper {
+    display: flex;
+
+    .card,
+    .cardAlt {
+      flex: 1;
+      @include card();
+    }
+
+    .cardAlt {
+      @include card(alt);
+    }
+  }
+}
+
+.article3 {
+  background-color: color(--alt-background);
+}

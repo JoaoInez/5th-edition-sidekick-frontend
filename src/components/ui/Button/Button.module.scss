@@ -1,5 +1,11 @@
+@import "styles/mixins.scss";
+
 .default {
-  background-color: var(--primary-color);
-  color: var(--on-primary-color);
+  background-color: color(--primary);
+  // background-color: rgba(color(--primary, rgb), 0.75);
+  color: color(--on-primary);
   border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  @include button-float();
 }

@@ -1,0 +1,27 @@
+@import "styles/mixins.scss";
+
+.navbar {
+  z-index: 1;
+  background-color: color(--nav);
+  color: color(--on-surface);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid color(--accent);
+
+  .container {
+    @include container();
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      font-size: 1.62671rem;
+      font-weight: bold;
+      color: var(--alizarin-crimson);
+    }
+  }
+}

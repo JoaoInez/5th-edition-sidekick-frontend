@@ -1,0 +1,22 @@
+@import "styles/mixins";
+
+.button {
+  background-color: color(--reverse-surface);
+  color: color(--on-reverse-surface);
+  padding: 6px 10px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include button-float();
+
+  .icon {
+    color: color(--on-reverse-surface);
+  }
+
+  span {
+    text-transform: capitalize;
+    margin-right: 5px;
+  }
+}

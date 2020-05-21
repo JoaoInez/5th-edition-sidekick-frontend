@@ -1,16 +1,17 @@
-import React, { FC, ReactNode, HTMLProps } from "react";
+import React, { FC, HTMLProps } from "react";
 import button from "./Button.module.scss";
 
 type Props = {
-  children: ReactNode;
+  children: string;
 };
 
 const Button: FC<Props & HTMLProps<HTMLButtonElement>> = ({
   children,
   onClick,
+  className,
 }) => (
-  <button className={button.default} onClick={onClick}>
-    {children}
+  <button className={`${button.default} ${className}`} onClick={onClick}>
+    <span>{children}</span>
   </button>
 );
 

@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../types/stateTypes";
+import { RootState } from "types/stateTypes";
 import Meta from "./Meta";
+import Navbar from "./Navbar";
 import layout from "./Layout.module.scss";
 
 type Props = {
@@ -12,10 +13,11 @@ const Layout: FC<Props> = ({ children }) => {
   const { theme } = useSelector((state: RootState) => state.theme);
 
   return (
-    <>
+    <div className={`${layout.content} ${theme}-theme`}>
       <Meta />
-      <main className={`${layout.content} ${theme}-theme`}>{children}</main>
-    </>
+      <Navbar />
+      <main>{children}</main>
+    </div>
   );
 };
 

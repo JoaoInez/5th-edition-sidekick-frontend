@@ -1,1 +1,2 @@
-export type Themes = { theme: "light" | "dark" };
+export type Themes = "system" | "light" | "dark";
+export type ThemesObject = { theme: Themes };

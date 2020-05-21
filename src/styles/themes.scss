@@ -1,0 +1,104 @@
+$white: #fff;
+$transparent-white: rgba(#fff, 0.86);
+$concrete: #f2f2f2;
+$gallery: #eaeaea;
+$mercury: #e6e6e6;
+$gray: #888;
+$doved-gray: #666;
+$mine-shaft: #333;
+$cod-gray: #1a1a1a;
+$dark-gray: #121212;
+$black: #000;
+$transparent-black: rgba(#000, 0.6);
+$alizarin-crimson: #e71d36;
+$amber: #ffbe0b;
+$international-orange: #fb5607;
+$rose: #ff006e;
+$electric-violet: #8338ec;
+$dodger-blue: #3a86ff;
+
+:root {
+  --white: #fff;
+  --transparent-white: rgba(255, 255, 255, 0.86);
+  --concrete: #f2f2f2;
+  --gallery: #eaeaea;
+  --mercury: #e6e6e6;
+  --gray: #888;
+  --doved-gray: #666;
+  --mine-shaft: #333;
+  --cod-gray: #1a1a1a;
+  --dark-gray: #121212;
+  --black: #000;
+  --transparent-black: rgba(0, 0, 0, 0.6);
+  --alizarin-crimson: #e71d36;
+  --amber: #ffbe0b;
+  --international-orange: #fb5607;
+  --rose: #ff006e;
+  --electric-violet: #8338ec;
+  --dodger-blue: #3a86ff;
+}
+
+@mixin light-theme {
+  --background-color: var(--concrete);
+  --alt-background-color: var(--mercury);
+  --on-background-color: var(--cod-gray);
+  --surface-color: var(--white);
+  --alt-surface-color: var(--cod-gray);
+  --reverse-surface-color: var(--surface-color);
+  --alt-reverse-surface-color: var(--alt-surface-color);
+  --on-surface-color: var(--cod-gray);
+  --on-alt-surface-color: var(--mercury);
+  --on-reverse-surface-color: var(--on-surface-color);
+  --on-alt-reverse-surface-color: var(--on-alt-surface-color);
+  --primary-color: var(--alizarin-crimson);
+  --on-primary-color: var(--transparent-white);
+  --secondary-color: var(--doved-gray);
+  --accent-color: var(--gallery);
+  --nav-color: var(--transparent-white);
+}
+
+@mixin dark-theme {
+  --background-color: var(--dark-gray);
+  --alt-background-color: var(--cod-gray);
+  --on-background-color: var(--white);
+  --surface-color: var(--mine-shaft);
+  --alt-surface-color: var(--concrete);
+  --reverse-surface-color: var(--alt-surface-color);
+  --alt-reverse-surface-color: var(--surface-color);
+  --on-surface-color: var(--white);
+  --on-alt-surface-color: var(--cod-gray);
+  --on-reverse-surface-color: var(--on-alt-surface-color);
+  --on-alt-reverse-surface-color: var(--on-surface-color);
+  --primary-color: var(--alizarin-crimson);
+  --on-primary-color: var(--transparent-white);
+  --secondary-color: var(--gray);
+  --accent-color: var(--mine-shaft);
+  --nav-color: var(--transparent-black);
+}
+
+.light-theme {
+  @include light-theme();
+}
+
+.dark-theme {
+  @include dark-theme();
+}
+
+@media (prefers-color-scheme: light) {
+  .system-theme {
+    @include light-theme();
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .system-theme {
+    @include dark-theme();
+  }
+}
+
+.system-theme,
+.light-theme,
+.dark-theme {
+  background-color: var(--background-color);
+  color: var(--on-background-color);
+}

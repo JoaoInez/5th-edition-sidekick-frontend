@@ -4,7 +4,7 @@ import Head from "next/head";
 const Meta: FC = () => {
   return (
     <Head>
-      <title>Create Next App</title>
+      <title>Home | 5es</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );

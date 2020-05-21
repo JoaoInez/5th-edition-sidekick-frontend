@@ -5,13 +5,13 @@ import Button from "./index";
 export default { title: "Button", decorators: [withA11y] };
 
 export const lightTheme: FC = () => (
-  <div className="light-theme">
-    <Button>Hello</Button>
+  <div className="light-theme center">
+    <Button>Button</Button>
   </div>
 );
 
 export const darkTheme: FC = () => (
-  <div className="dark-theme">
-    <Button>Hello</Button>
+  <div className="dark-theme center">
+    <Button>Button</Button>
   </div>
 );
