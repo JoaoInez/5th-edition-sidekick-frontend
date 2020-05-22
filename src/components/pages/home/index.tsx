@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import Button from "components/ui/Button";
+import Footer from "components/layout/Footer";
+import { Button } from "components/ui/";
 import home from "./Home.module.scss";
 
 const Home: FC = () => (
@@ -45,6 +46,7 @@ const Home: FC = () => (
         </div>
       </div>
     </article>
+    <Footer />
   </section>
 );
 

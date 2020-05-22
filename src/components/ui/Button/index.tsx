@@ -5,7 +5,7 @@ type Props = {
   children: string;
 };
 
-const Button: FC<Props & HTMLProps<HTMLButtonElement>> = ({
+export const Button: FC<Props & HTMLProps<HTMLButtonElement>> = ({
   children,
   onClick,
   className,
@@ -14,5 +14,3 @@ const Button: FC<Props & HTMLProps<HTMLButtonElement>> = ({
     <span>{children}</span>
   </button>
 );
-
-export default Button;

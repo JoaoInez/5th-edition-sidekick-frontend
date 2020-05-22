@@ -5,7 +5,7 @@ import { changeTheme } from "state/slices/themeSlice";
 import Icon from "components/icons";
 import themeButton from "./ThemeButton.module.scss";
 
-const ThemeButton: FC = () => {
+export const ThemeButton: FC = () => {
   const dispatch = useDispatch();
 
   const { theme } = useSelector((state: RootState) => state.theme);
@@ -30,5 +30,3 @@ const ThemeButton: FC = () => {
     </button>
   );
 };
-
-export default ThemeButton;

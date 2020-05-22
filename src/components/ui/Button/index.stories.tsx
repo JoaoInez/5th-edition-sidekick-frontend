@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { withA11y } from "@storybook/addon-a11y";
-import Button from "./index";
+import { Button } from "./index";
 
 export default { title: "Button", decorators: [withA11y] };
 
