@@ -1,0 +1,21 @@
+@import "styles/mixins.scss";
+
+.wrapper {
+  height: content-height();
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    .input {
+      margin-bottom: 10px;
+    }
+  }
+}

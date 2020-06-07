@@ -39,9 +39,20 @@
       justify-content: center;
       align-items: center;
 
-      .signUpBtn {
+      .signUpBtn,
+      .logInBtn {
         padding: 10px 50px;
         font-size: 1.125rem;
+      }
+
+      .signUpBtn {
+        margin-left: 5px;
+      }
+
+      .logInBtn {
+        margin-right: 5px;
+        background-color: color(--surface);
+        color: color(--on-surface);
       }
     }
   }
@@ -77,6 +88,6 @@
   }
 }
 
-.article3 {
+.article2 {
   background-color: color(--alt-background);
 }

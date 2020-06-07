@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "types/stateTypes";
 import Meta from "./Meta";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import layout from "./Layout.module.scss";
 
 type Props = {
@@ -17,6 +18,7 @@ const Layout: FC<Props> = ({ children }) => {
       <Meta />
       <Navbar />
       <main>{children}</main>
+      <Footer />
     </div>
   );
 };

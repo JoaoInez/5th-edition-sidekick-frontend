@@ -1,8 +1,8 @@
 import React, { FC, MouseEventHandler } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { IoIosSunny, IoIosMoon, IoIosContrast } from "react-icons/io";
 import { RootState } from "types/stateTypes";
 import { changeTheme } from "state/slices/themeSlice";
-import Icon from "components/icons";
 import themeButton from "./ThemeButton.module.scss";
 
 export const ThemeButton: FC = () => {
@@ -21,12 +21,13 @@ export const ThemeButton: FC = () => {
   return (
     <button className={themeButton.button} onClick={changeCurrentTheme}>
       <span>{theme}</span>
-      <Icon
-        icon={
-          theme === "light" ? "sun" : theme === "dark" ? "moon" : "contrast"
-        }
-        className={themeButton.icon}
-      />
+      {theme === "light" ? (
+        <IoIosSunny />
+      ) : theme === "dark" ? (
+        <IoIosMoon />
+      ) : (
+        <IoIosContrast />
+      )}
     </button>
   );
 };

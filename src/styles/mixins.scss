@@ -47,7 +47,8 @@
   @include box-shadow();
   transform: translateY(0);
 
-  &:hover {
+  &:hover,
+  &:focus {
     @include box-shadow(long);
     transform: translateY(-2px);
   }
@@ -57,6 +58,10 @@
     box-shadow: none;
     transform: translateY(0);
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 @function color($var) {
@@ -65,4 +70,8 @@
 
 @function get-rgb($color) {
   @return var(#{$color}-rgb);
+}
+
+@function content-height() {
+  @return calc(100vh - 103px);
 }

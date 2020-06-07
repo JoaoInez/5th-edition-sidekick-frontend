@@ -1,0 +1,29 @@
+@import "styles/mixins.scss";
+
+.wrapper {
+  background-color: color(--input);
+  color: color(--on-surface);
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid color(--accent);
+  transition: border 0.15s ease-in-out;
+  display: flex;
+  align-items: center;
+
+  &.focus {
+    border: 1px solid color(--secondary);
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+
+  input {
+    color: color(--on-surface);
+    width: 100%;
+  }
+}
+
+.button {
+  composes: default from "../Button/Button.module.scss";
+}

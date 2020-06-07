@@ -1,6 +1,5 @@
 import React, { FC } from "react";
-import Footer from "components/layout/Footer";
-import { Button } from "components/ui/";
+import { Anchor } from "components/ui";
 import home from "./Home.module.scss";
 
 const Home: FC = () => (
@@ -10,11 +9,17 @@ const Home: FC = () => (
         <div className={home.article1Left}>
           <h1>5th Edition Sidekick</h1>
           <p>
-            5th Edition Sidekick lets you create and manage character sheets.
+            5th Edition Sidekick lets you create and manage your character
+            sheets.
           </p>
         </div>
         <div className={home.article1Right}>
-          <Button className={home.signUpBtn}>Sign up</Button>
+          <Anchor href="login" className={home.logInBtn}>
+            Log in
+          </Anchor>
+          <Anchor href="signup" className={home.signUpBtn}>
+            Sign up
+          </Anchor>
         </div>
       </div>
     </article>
@@ -46,7 +51,6 @@ const Home: FC = () => (
         </div>
       </div>
     </article>
-    <Footer />
   </section>
 );
 

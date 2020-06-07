@@ -39,6 +39,7 @@ $dodger-blue: #3a86ff;
   --secondary-color: var(--doved-gray);
   --accent-color: var(--gallery);
   --nav-color: #{rgba(get-rgb(--white), 0.6)};
+  --input-color: var(--white);
 }
 
 @mixin dark-theme {
@@ -58,6 +59,7 @@ $dodger-blue: #3a86ff;
   --secondary-color: var(--gray);
   --accent-color: var(--mine-shaft);
   --nav-color: #{rgba(get-rgb(--black), 0.6)};
+  --input-color: var(--black);
 }
 
 @function hex-to-rgb($hex) {
